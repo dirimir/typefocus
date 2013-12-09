@@ -254,6 +254,7 @@ ul.nav-menu li a{
     color:#999;
     width:70%;
     margin:0 auto;
+	text-align:left;
 }
 
 #disclaimer i{
@@ -616,5 +617,6 @@ div.comment-metadata .reply{
 }
 
 }
+
 
 
