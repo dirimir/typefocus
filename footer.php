@@ -13,8 +13,8 @@
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
 			<?php do_action( 'typefocus_credits' ); ?>
-			<?php if ( get_theme_mod(typefocus_disclaimer) ):  ?>
-			<?php echo get_theme_mod(typefocus_disclaimer); ?>
+			<?php if ( get_theme_mod(typefocus_copyright) ):  ?>
+			<?php echo get_theme_mod(typefocus_copyright); ?>
 			<?php else: ?>
 			<a href="http://wordpress.org/" rel="generator"><?php printf( __( 'Proudly powered by %s', 'typefocus' ), 'WordPress' ); ?></a>
 			<span class="sep"> | </span>
@@ -28,3 +28,4 @@
 
 </body>
 </html>
+
