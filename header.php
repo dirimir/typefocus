@@ -41,18 +41,27 @@
 			<?php
 				if ( sizeof(get_theme_mod(typefocus_social))>0 ){
 				$social_array = get_theme_mod(typefocus_social);
-					foreach ($social_array as $this_social=>$social_link){
-						if ( $social_link=='' ){
-							// we will put dummy images, cuz user hasnt configured yet
-							$social_link="#";
+					if (is_array($social_array)){
+						foreach ($social_array as $this_social=>$social_link){
+							if ( $social_link=='' ){
+								// we will put dummy images, cuz user hasnt configured yet
+								$social_link="#";
+							}
+							$img_icon = "fa fa-".str_replace("tf_","",$this_social)."-square";
+							if ($social_link) {
+								print "<a href=\"$social_link\">";
+								print "<i class=\"$img_icon\"></i>";
+								print"</a>";
+							}
 						}
-						$img_icon = "fa fa-".str_replace("tf_","",$this_social)."-square";
-						if ($social_link) {
-							print "<a href=\"$social_link\">";
-							print "<i class=\"$img_icon\"></i>";
-							print"</a>";
+					}
+					else{
+						// dummy icons here
+						$dummy = array('github','linkedin','facebook','twitter');
+						foreach ($dummy as $this_social){
+							print '<a href="#"><i class="fa fa-'.$this_social.'-square"></i></a>';	
 						}
-					}		
+					}
 				}
 			?>
 		<?php endif; ?>	
@@ -84,3 +93,4 @@
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
+
