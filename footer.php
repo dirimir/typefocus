@@ -13,9 +13,13 @@
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
 			<?php do_action( 'typefocus_credits' ); ?>
+			<?php if ( get_theme_mod(typefocus_disclaimer) ):  ?>
+			<?php echo get_theme_mod(typefocus_disclaimer); ?>
+			<?php else: ?>
 			<a href="http://wordpress.org/" rel="generator"><?php printf( __( 'Proudly powered by %s', 'typefocus' ), 'WordPress' ); ?></a>
 			<span class="sep"> | </span>
 			<?php printf( __( 'Theme: %1$s by %2$s.', 'typefocus' ), 'typefocus', '<a href="http://www.ajaysdesk.com" rel="designer">Ajay Divakaran</a>' ); ?>
+			<?php endif; ?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 

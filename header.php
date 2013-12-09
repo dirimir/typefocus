@@ -41,7 +41,7 @@
 			<?php
 				if ( sizeof(get_theme_mod(typefocus_social))>0 ){
 				$social_array = get_theme_mod(typefocus_social);
-					if (is_array($social_array)){
+					if ( is_array($social_array) && (sizeof(array_filter($social_array))>0) ){
 						foreach ($social_array as $this_social=>$social_link){
 							$img_icon = "fa fa-".str_replace("tf_","",$this_social)."-square";
 							if ($social_link) {
@@ -80,8 +80,7 @@
 		<?php if( get_theme_mod(typefocus_disclaimer) ): ?>
 		<div id="disclaimer" >
 			<i class="fa fa-quote-left pull-left fa-border"></i>
-			All opinions and articles on this website are my own,
-			and not representative of the organization that I'm employed by.
+			<?php echo get_theme_mod(typefocus_disclaimer);  ?>
 		</div>
 		<?php endif; ?>
 		
