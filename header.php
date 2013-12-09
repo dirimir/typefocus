@@ -22,21 +22,40 @@
 <div id="page" class="hfeed site">
 	<?php do_action( 'before' ); ?>
 	<header id="masthead" class="site-header" role="banner">
-		<div class="author-image"><img src="<?php echo get_theme_mod( 'typefocus_author_image' )?>"/></div>
+		<div class="author-image">
+		<?php if ( get_theme_mod( 'typefocus_author_image_disabled' )==false ): ?>			
+			<?php
+			$auth_img = get_theme_mod( 'typefocus_author_image' );
+			if ( strlen($auth_img)==0 ){
+				$auth_img= get_template_directory_uri()
+				."/images/author-placeholder-nero.jpg";
+			}
+			print "<img src=".$auth_img." />";
+			?>
+		<?php endif; ?>		
+		</div>
 		
 		<!-- Social Icons -->
 		<div class="header-social">
-			<?php	
+		<?php if ( get_theme_mod( 'typefocus_social_disabled' )==false ): ?>
+			<?php
+				if ( sizeof(get_theme_mod(typefocus_social))>0 ){
 				$social_array = get_theme_mod(typefocus_social);
-				foreach ($social_array as $this_social=>$social_link){
-					$img_icon = "fa fa-".str_replace("tf_","",$this_social)."-square";
-					if ($social_link) {
-						print "<a href=\"$social_link\">";
-						print "<i class=\"$img_icon\"></i>";
-						print"</a>";
-					}
-				}		
+					foreach ($social_array as $this_social=>$social_link){
+						if ( $social_link=='' ){
+							// we will put dummy images, cuz user hasnt configured yet
+							$social_link="#";
+						}
+						$img_icon = "fa fa-".str_replace("tf_","",$this_social)."-square";
+						if ($social_link) {
+							print "<a href=\"$social_link\">";
+							print "<i class=\"$img_icon\"></i>";
+							print"</a>";
+						}
+					}		
+				}
 			?>
+		<?php endif; ?>	
 		</div>		
 		
 		<div class="site-branding">

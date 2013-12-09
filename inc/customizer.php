@@ -36,6 +36,24 @@ function typefocus_author_image_customizer( $wp_customize ) {
             'priority'  => 201
         )
     );
+    
+    // disabling
+    $wp_customize->add_setting(
+        'typefocus_author_image_disabled',
+        array(
+            'default'      => 'false',
+            'transport'    => 'postMessage'
+        )
+    );
+    $wp_customize->add_control(
+        'typefocus_author_image_disabled',
+        array(
+            'label'    => 'Disable TF author-image',
+            'section'  => 'typefocus_author_image',
+            'type'     => 'checkbox',
+        )
+    );    
+    
     $wp_customize->add_setting(
         'typefocus_author_image',
         array(
@@ -101,6 +119,24 @@ function typefocus_social_customizer( $wp_customize ) {
             'priority'  => 203
         )
     );
+    
+    // disabling
+    $wp_customize->add_setting(
+        'typefocus_social_disabled',
+        array(
+            'default'      => 'false',
+            'transport'    => 'postMessage'
+        )
+    );
+    $wp_customize->add_control(
+        'typefocus_social_disabled',
+        array(
+            'label'    => 'Disable TF social-icons',
+            'section'  => 'typefocus_social',
+            'type'     => 'checkbox',
+        )
+    );
+    
     // facebook
     $wp_customize->add_setting(
         'typefocus_social[tf_facebook]',
