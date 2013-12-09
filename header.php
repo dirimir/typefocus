@@ -43,10 +43,6 @@
 				$social_array = get_theme_mod(typefocus_social);
 					if (is_array($social_array)){
 						foreach ($social_array as $this_social=>$social_link){
-							if ( $social_link=='' ){
-								// we will put dummy images, cuz user hasnt configured yet
-								$social_link="#";
-							}
 							$img_icon = "fa fa-".str_replace("tf_","",$this_social)."-square";
 							if ($social_link) {
 								print "<a href=\"$social_link\">";
