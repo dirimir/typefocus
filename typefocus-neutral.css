@@ -159,7 +159,8 @@ i.fa-quote-left{
     font-size: 2.8rem;
 }
 
-.entry-content p{
+.entry-content p,
+div.entry-content ul{
     font: 500 1.8rem  'Merriweather', serif;
     line-height:4rem;
 }
@@ -608,7 +609,8 @@ div.comment-metadata .reply{
 
     }
 
-    #main p {
+    #main p,
+	div.entry-content ul{
         font-size:1.6rem;
         line-height: 3.2rem;
     }
