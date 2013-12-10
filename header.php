@@ -22,52 +22,15 @@
 <div id="page" class="hfeed site">
 	<?php do_action( 'before' ); ?>
 	<header id="masthead" class="site-header" role="banner">
-		<div class="author-image">
-		<?php if ( get_theme_mod( 'typefocus_author_image_disabled' )==false ): ?>			
-			<?php
-			$auth_img = get_theme_mod( 'typefocus_author_image' );
-			if ( strlen($auth_img)==0 ){
-				$auth_img= get_template_directory_uri()
-				."/images/author-placeholder-nero.jpg";
-			}
-			print "<img src=".$auth_img." />";
-			?>
-		<?php endif; ?>		
-		</div>
-		
-		<!-- Social Icons -->
-		<div class="header-social">
-		<?php if ( get_theme_mod( 'typefocus_social_disabled' )==false ): ?>
-			<?php
-				if ( sizeof(get_theme_mod(typefocus_social))>0 ){
-				$social_array = get_theme_mod(typefocus_social);
-					if ( is_array($social_array) && (sizeof(array_filter($social_array))>0) ){
-						foreach ($social_array as $this_social=>$social_link){
-							$img_icon = "fa fa-".str_replace("tf_","",$this_social)."-square";
-							if ($social_link) {
-								print "<a href=\"$social_link\">";
-								print "<i class=\"$img_icon\"></i>";
-								print"</a>";
-							}
-						}
-					}
-					else{
-						// dummy icons here
-						$dummy = array('github','linkedin','facebook','twitter');
-						foreach ($dummy as $this_social){
-							print '<a href="#"><i class="fa fa-'.$this_social.'-square"></i></a>';	
-						}
-					}
-				}
-			?>
-		<?php endif; ?>	
-		</div>		
-		
+
+		<!-- Title and descr -->
 		<div class="site-branding">
 			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-			
+			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>		
 		</div>
+		
+
+
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">
 			<h1 class="menu-toggle"><?php _e( 'Menu', 'typefocus' ); ?></h1>
@@ -75,7 +38,51 @@
 
 			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 		</nav><!-- #site-navigation -->
+
+		<!-- author and social -->
+		<div class="author-image">
+			<?php if ( get_theme_mod( 'typefocus_author_image_disabled' )==false ): ?>			
+				<?php
+				$auth_img = get_theme_mod( 'typefocus_author_image' );
+				if ( strlen($auth_img)==0 ){
+					$auth_img= get_template_directory_uri()
+					."/images/author-placeholder-nero.jpg";
+				}
+				print "<img src=".$auth_img." />";
+				?>
+			<?php endif; ?>
 		
+			<!-- Social Icons -->
+			<div class="header-social">
+			<?php if ( get_theme_mod( 'typefocus_social_disabled' )==false ): ?>
+				<?php
+					if ( sizeof(get_theme_mod(typefocus_social))>0 ){
+					$social_array = get_theme_mod(typefocus_social);
+						if ( is_array($social_array) && (sizeof(array_filter($social_array))>0) ){
+							foreach ($social_array as $this_social=>$social_link){
+								$img_icon = "fa fa-".str_replace("tf_","",$this_social)."-square";
+								if ($social_link) {
+									print "<a href=\"$social_link\">";
+									print "<i class=\"$img_icon\"></i>";
+									print"</a>";
+								}
+							}
+						}
+						else{
+							// dummy icons here
+							$dummy = array('github','linkedin','facebook','twitter');
+							foreach ($dummy as $this_social){
+								print '<a href="#"><i class="fa fa-'.$this_social.'-square"></i></a>';	
+							}
+						}
+					}
+				?>
+			<?php endif; ?>	
+			</div>				
+		
+		</div>
+		
+				
 		<!-- disclaimer -->
 		<?php if( get_theme_mod(typefocus_disclaimer) ): ?>
 		<div id="disclaimer" >
@@ -88,4 +95,5 @@
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
+
 
