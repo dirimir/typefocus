@@ -11,7 +11,7 @@
 			<!-- If quote, then display pullquotes -->
 			<?php if ( 'quote' == get_post_format() ) : ?>
 			<i class="fa fa-quote-left pull-left fa-border"></i>
-			<a ><?php the_title(); ?></a>
+			<a class="quote-post"><?php the_title(); ?></a>
 			<!-- else -->
 			<?php else: ?>
 			<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
@@ -27,13 +27,13 @@
 		
 	</header><!-- .entry-header -->
 
-	<?php if ( is_search() || is_home() ) : // Only display Excerpts for Search ?>
+	<?php if ( is_search() || is_home() || is_category() ) : // Only display Excerpts for Search ?>
 	<div class="entry-summary">
 		<?php the_excerpt(); ?>
 	</div><!-- .entry-summary -->
 	
 	<!-- if homepage, then also display read-more -->
-	<?php if( is_home() && 'quote' != get_post_format()  ): ?>
+	<?php if( ( is_home() || is_category() ) && 'quote' != get_post_format()  ): ?>
 	<a class="continue-reading" href="<?php echo get_permalink(); ?>"> Continue reading &rarr;</a>
 	<?php endif; ?>
 

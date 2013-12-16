@@ -5,12 +5,17 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<h1 class="entry-title"><?php the_title(); ?></h1>
-
+	
+	<div class="leftsider">	
 		<div class="entry-meta">
 			<?php typefocus_posted_on(); ?>
 		</div><!-- .entry-meta -->
+	</div>
+
+	<div class="rightsider">		
+	<header class="entry-header">
+		<h1 class="entry-title"><?php the_title(); ?></h1>
+
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
@@ -59,4 +64,5 @@
 
 		<?php edit_post_link( __( 'Edit', 'typefocus' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-meta -->
+	</div>	<!-- rightsider -->	
 </article><!-- #post-## -->

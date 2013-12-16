@@ -13,8 +13,6 @@
  *
  */
 
-@import url(http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,900,900italic,700italic);
-
 html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,code,del,dfn,em,img,q,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{border:0;font-weight:inherit;font-style:inherit;font-size:100%;font-family:inherit;vertical-align:baseline;margin:0;padding:0;}
 table{border-collapse:separate;border-spacing:0;margin-bottom:1.4em;}
 caption,th,td{text-align:left;font-weight:400;}
@@ -48,27 +46,27 @@ body:after {
     max-width: 90rem;
     margin:0 auto;
     padding-top:2rem;
-	border-top:1rem solid #eee;	
+	border-top:0.5rem solid #c00;	
     
 }
 
-header#masthead{margin-top:2rem;}
-header#masthead div {
-	border-bottom: 10px solid #eee;
-	padding:2rem 0;
-}
-header#masthead div.header-social{padding:0;border-bottom:0;}
+
+
+
 div.author-image img {margin: 1rem 0;}
 #page header#masthead{
     width:20rem;
     text-align: center;
     position:fixed;
+	margin:2rem;
+	padding-top:2rem;
     
 }
 
 #content{
     width:66.66%;
     float:right;
+	min-height:100rem;
 }
 
 
@@ -77,6 +75,10 @@ footer.site-footer{
     position:relative;
 }
 
+footer.site-footer .site-info{
+    width:70%;
+	margin:0 auto;
+}
 /* stack footer, on top of header , on top of body */
 body:after{z-index:-10;}
 header{z-index: 5;}
@@ -85,22 +87,38 @@ footer{z-index:10;}
 
 /* Article (per-article)
 -------------------------------------------------------------- */
-
+header.page-header h1{
+	padding-top: 5rem;
+	font-size: 6rem;
+	border-bottom: 2px dotted #ccc;
+	display: inline-block;
+	padding-bottom: 3rem;
+}
 p {
-    font: 300 1.8rem  'Merriweather', serif;
-    line-height: 3.6rem;
+    font: 300 1.6rem  'merriweatherlight', serif;
+    line-height: 3.0rem;
 }
 
-h1 { font: 500 3.4rem  'Merriweather', serif;
+h1 { font: 500 3.4rem  'merriweatherlight', serif;
 	text-shadow: 0 1px 0 #fff;
-    opacity: 0.9;
+	font: 300 3.5rem 'alegreyaregular', serif;
+	line-height: 4.8rem;
+}
+
+h1.entry-title a.quote-post {
+	text-decoration: none;
+	color:#333;
+	font: 300 2rem  'merriweatherlight_italic', serif;
+	line-height: 3rem;
+	text-shadow: 0 1px 0 #eee;
+    opacity: 0.9;	
+	
 }
 
 div.entry-meta  {
-    font: 500 1.8rem  'Merriweather', serif;
+    font: 500 1.8rem  'merriweatheritalic', serif;
     line-height: 3rem;
     opacity: 0.5;
-    font-style: italic;
     letter-spacing: 0.1rem;
 }
 
@@ -109,7 +127,7 @@ h1 a { text-decoration: none; color:#333 !important;}
 div.entry-meta a { text-decoration: none; color:#333 !important;}
 
 article footer.entry-meta{
-    font: 500 1.8rem 'Merriweather', serif;
+    font: 500 1.8rem 'merriweatherlight', serif;
     padding:30px 0px;
     display:none;
 }
@@ -119,7 +137,7 @@ article nav.post-navigation{
 }
 
 nav.navigation.post-navigation div.nav-links a{
-    font: 700 1.8rem  'Merriweather', serif;
+    font: 700 1.8rem  'merriweatherlight', serif;
     line-height: 3.6rem;
     text-decoration: none;
     color: #c9323a !important;
@@ -135,6 +153,11 @@ nav.navigation.post-navigation{
 
 /* Index page blog-section components
 -------------------------------------------------------------- */
+body.single header.entry-header h1.entry-title{
+	font-size:5rem;
+	line-height:8rem;
+	
+}
 main article{
     border-bottom:.1rem solid #ddd ;
     padding:5rem 0;
@@ -151,7 +174,7 @@ main article{
 .continue-reading {
     text-decoration: none;
     color: #c9323a !important;
-    font: 500 1.8rem  'Merriweather', serif;
+    font: 500 1.8rem  'merriweatherlight', serif;
     line-height:4rem;
     
 }
@@ -168,18 +191,18 @@ i.fa-quote-left{
 
 .entry-content p,
 div.entry-content ul{
-    font: 500 1.8rem  'Merriweather', serif;
-    line-height:4rem;
+    font: 500 1.6rem  'merriweatherlight', serif;
+    line-height:3rem;
 }
 
 .entry-content h2{
-    font: 500 2.8rem  'Merriweather', serif;
+    font: 500 2.8rem  'merriweatherlight', serif;
     line-height: 4.2rem;
     padding:30px 0px;
 }
 
 .entry-content h3{
-    font: 500 2.4rem  'Merriweather', serif;
+    font: 500 2.4rem  'merriweatherlight', serif;
     line-height: 3.6rem;
     padding:30px 0px;
 }
@@ -198,12 +221,13 @@ div.entry-content ul{
 .author-image{
     display: inline-block;
     margin:0 auto;
+	width:100%;
 }
 .author-image img {
-    border-radius: 40px;
-	-webkit-border-radius: 40px;
-	-moz-border-radius: 40px;
-    padding:0.7rem;
+    border-radius: 50px;
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+    /padding:0.7rem;
     background:rgba(0,0,0,0.1);
     border-color: rgba(0,0,0,0.2);
     border-width:0.1rem;
@@ -211,17 +235,24 @@ div.entry-content ul{
     
 }
 h1.site-title a {
-    font: 500 4rem 'Merriweather';
+    font: 500 3rem 'dancing_script_otregular';
 	color: rgba(0,0,0,0.6) !important;
 	letter-spacing: 1px;
 }
 
 h2.site-description{
-    font: 300 1.6rem  'Merriweather', serif;
+    font: 300 1.6rem  'merriweatherlight', serif;
     width:60%;
     margin:0 auto;
     margin-bottom:30px;
 	display:none;
+}
+
+#site-navigation{
+	border:2px dotted #ddd;
+	border-width: 2px 0;
+	padding:2rem 0;
+	margin-top:5rem;
 }
 #menu-navbar,
 ul.nav-menu{
@@ -238,16 +269,18 @@ ul.nav-menu li{
 }
 #menu-navbar li a,
 ul.nav-menu li a{
-    font: 500 2rem  'Merriweather', serif;
-    padding:10px;
+    font: 500 2rem  'merriweatherlight', serif;
+    padding:10px 0;
     text-decoration: none;
     color:#c9323a;
 	letter-spacing: 0.2px;
 }
 
 .header-social{
-    font-size:4.0em;
-    display: inline-block;
+    font-size:5.0em;
+    display: block;
+	clear:both;
+
 
 	
 
@@ -264,13 +297,14 @@ ul.nav-menu li a{
     color:#999;
     width:100%;
     margin:0 auto;
-	text-align:center;
-    font: 500 1.4rem 'Merriweather';
+	text-align:right;
+    font: 200 1.4rem 'merriweatherlight_italic';
 	line-height: 2rem;
 	color: rgba(0,0,0,0.3) !important;
 	letter-spacing: 0.2px;
 	float:none;
 	clear:both;
+	display:none;
 }
 
 #disclaimer i{
@@ -301,6 +335,9 @@ ul.nav-menu li a{
 
 /* Widget Area
 -------------------------------------------------------------- */
+.widget{
+	margin-top:5rem;
+}
 .widget-area aside{
     text-align: center;
     background:rgba(0,0,0,0.025);
@@ -308,13 +345,13 @@ ul.nav-menu li a{
     
 }
 .widget-area aside h3{  
-    font: 700 1.8rem  'Merriweather', serif;
+    font: 700 1.8rem  'merriweatherlight', serif;
     padding:10px;
     text-align:center;
     border-bottom:2px solid rgba(0,0,0,0.05);;
 }
 .widget-area aside ul{  
-    font: 300 1.4rem  'Merriweather', serif;
+    font: 300 1.4rem  'merriweatherlight', serif;
     text-align:center;
     list-style: none;
     display:inline-block;
@@ -343,7 +380,7 @@ ul.nav-menu li a{
 }
 
 .widget-area input {
-    font:700 1.4rem 'Merriweather', serif;
+    font:700 1.4rem 'merriweatherlight', serif;
     text-align: center;
 }
 
@@ -353,19 +390,19 @@ ul.nav-menu li a{
 #wp-calendar caption, #wp-calendar tfoot {
     text-align: right;
     margin: 10px 20px;
-    font: 700 1.4rem  'Merriweather', serif;
+    font: 700 1.4rem  'merriweatherlight', serif;
     /background:rgba(0,0,0,0.1);
 }
 #wp-calendar thead {  }
 #wp-calendar thead th {
     padding: 10px;
     text-align: center;
-    font: 700 1.4rem  'Merriweather', serif;
+    font: 700 1.4rem  'merriweatherlight', serif;
     opacity:0.5;
 }
 #wp-calendar tbody {
     opacity:0.8;
-    font: 700 1.4rem  'Merriweather', serif;
+    font: 700 1.4rem  'merriweatherlight', serif;
 }
 #wp-calendar tbody td { background: #f5f5f5; border: 1px solid #fff; text-align: center; padding:8px;}
 #wp-calendar tbody td:hover { background: #fff; }
@@ -386,7 +423,7 @@ article.comment-body{
     margin-bottom:3rem;
 }
 #comments h2.comments-title{
-    font: 500 1.8rem  'Merriweather', serif;
+    font: 500 1.8rem  'merriweatherlight', serif;
     line-height: 3.6rem;
 }
 
@@ -396,12 +433,12 @@ article.comment-body{
 
 .responses-heading,
 h3#reply-title{
-    font: 700 3rem  'Merriweather', serif;
+    font: 700 3rem  'merriweatherlight', serif;
     margin:7rem 0px 30px 0px;
 }
 
 footer.comment-meta{
-        font: 500 1.8rem  'Merriweather', serif;
+        font: 500 1.8rem  'merriweatherlight', serif;
 }
 footer.comment-meta img{
     float:left;
@@ -423,7 +460,7 @@ div.comment-author cite{
 }
 
 div.comment-metadata a{
-    font: 500 1.6rem  'Merriweather', serif;
+    font: 500 1.6rem  'merriweatherlight', serif;
     line-height: 3rem;
     text-decoration: none;
     font-style: italic;
@@ -432,11 +469,11 @@ div.comment-metadata a{
 }
 
 div.comment-content p{
-     font: 500 1.6rem  'Merriweather', serif;
+     font: 500 1.6rem  'merriweatherlight', serif;
 }
 
 article.comment-body .reply a{
-    font: 700 1.5rem  'Merriweather', serif;
+    font: 700 1.5rem  'merriweatherlight', serif;
     text-decoration: none;
     1font-style: italic;
     letter-spacing: 0.05rem;
@@ -466,6 +503,7 @@ div.comment-metadata .reply{
         float:none;
         text-align:center;
         position: relative;
+		margin:0;
     }
     
     #content{
@@ -475,9 +513,7 @@ div.comment-metadata .reply{
     
     #disclaimer,{display:none;}
     
-    header#masthead{margin:4rem 0px;
-	
-	}
+    header#masthead{margin:4rem 0px;}
     
     #menu-navbar,
 	ul.nav-menu {
@@ -488,11 +524,15 @@ div.comment-metadata .reply{
 	ul.nav-menu li{
         float:left;
         border-right:1px dotted rgba(0,0,0,0.5);
+		padding:0rem 2rem;
+
     }
     #menu-navbar li:last-child{border:0;}
 	ul.nav-menu li:last-child{border:0;}
     
 	.author-image, #disclaimer, h1.menu-toggle{display: none;}
+	
+	h1.site-title a{font-size:6rem;}
 
 
 }
@@ -508,6 +548,7 @@ div.comment-metadata .reply{
         float:none;
         text-align:center;
         position: relative;
+		margin:0;
     }
     
     #content{
@@ -530,11 +571,14 @@ div.comment-metadata .reply{
 	ul.nav-menu li{
         float:left;
         border-right:1px dotted rgba(0,0,0,0.5);
+		padding:0rem 2rem;
     }
     #menu-navbar li:last-child{border:0;}
 	ul.nav-menu li:last-child{border:0;}
     
 	.author-image, #disclaimer, h1.menu-toggle{display: none;}
+	
+	h1.site-title a{font-size:6rem;}
 
 }
 
@@ -549,6 +593,7 @@ div.comment-metadata .reply{
         float:none;
         text-align:center;
         position: relative;
+		margin:0;
     }
     
     #content{
@@ -571,7 +616,10 @@ div.comment-metadata .reply{
 	ul.nav-menu li{
         float:left;
         border-right:1px dotted rgba(0,0,0,0.5);
+		padding:0rem 1rem;
+		
     }
+	ul.nav-menu li a { font-size:1.6rem !important; }
     #menu-navbar li:last-child{border:0;}
 	ul.nav-menu li:last-child{border:0;}
     
@@ -584,7 +632,7 @@ div.comment-metadata .reply{
 
 
     .continue-reading {
-        font: 500 1.6rem  'Merriweather', serif;
+        font: 500 1.6rem  'merriweatherlight', serif;
         line-height:3.2rem;     
     }
 
@@ -612,6 +660,8 @@ div.comment-metadata .reply{
         font-size:1.6rem;
         line-height: 3.2rem;
     }
+	
+		h1.site-title a{font-size:5rem;}
 
 
 }
