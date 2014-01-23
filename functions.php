@@ -89,13 +89,11 @@ function typefocus_scripts() {
 	}
 	
 	// Others (Styles and JS)
-	wp_enqueue_style( 'td-style-child', get_bloginfo('template_directory') . '/typefocus-neutral.css' );
-	wp_enqueue_style( 'font-awesome', get_bloginfo('template_directory') . '/fonts/font-awesome.css' );
-	wp_enqueue_style( 'cantarell', get_bloginfo('template_directory') . '/fonts/cantarell/cantarell.css' );
-
-			wp_enqueue_style( 'alegreya', get_bloginfo('template_directory') . '/fonts/alegreya/alegreya.css' );
-			wp_enqueue_style( 'merriweather', get_bloginfo('template_directory') . '/fonts/merriweather/merriweather.css' );
-			wp_enqueue_style( 'dancing', get_bloginfo('template_directory') . '/fonts/dancing/dancing.css' );
+	wp_enqueue_style( 'typefocus-style-child', get_template_directory_uri() . '/typefocus-neutral.css' );
+	wp_enqueue_style( 'typefocus-font-awesome', get_template_directory_uri(). '/fonts/font-awesome.css' );
+	wp_enqueue_style( 'typefocus-alegreya', get_template_directory_uri(). '/fonts/alegreya/alegreya.css' );
+	wp_enqueue_style( 'typefocus-merriweather', get_template_directory_uri(). '/fonts/merriweather/merriweather.css' );
+	wp_enqueue_style( 'typefocus-dancing', get_template_directory_uri(). '/fonts/dancing/dancing.css' );
 	
 }
 add_action( 'wp_enqueue_scripts', 'typefocus_scripts' );

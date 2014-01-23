@@ -160,7 +160,7 @@ body.single header.entry-header h1.entry-title{
 }
 main article{
     border-bottom:.1rem solid #ddd ;
-    padding:5rem 0;
+    padding:3rem 0;
     margin-bottom:6rem ;
 }
 
@@ -311,6 +311,10 @@ ul.nav-menu li a{
     font-size:1.4rem;
 	float:none;
 	clear:both;
+}
+
+div.menu-navbar-container{
+	overflow:hidden;
 }
 
 /* Site footer
@@ -487,6 +491,12 @@ div.comment-metadata .reply{
 
 .form-allowed-tags{
     display:none;
+}
+
+.su-pullquote h3{
+font-size:2rem;
+color:#c00;
+font-family:merriweatherlight_italic;
 }
 
 /* Responsive display media queries */
@@ -667,7 +677,5 @@ div.comment-metadata .reply{
 }
 
 }
-
-
 
 
